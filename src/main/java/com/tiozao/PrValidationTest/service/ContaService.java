@@ -8,8 +8,11 @@ import java.util.List;
 @Service
 public class ContaService {
 
-    public void createConta(){
+    List<String> itens = new ArrayList<>();
+
+    public void createConta(String item){
         System.out.println("Criando Conta");
+        itens.add(item);
     }
 
     public void deleteConta(){
@@ -19,4 +22,5 @@ public class ContaService {
     public List<String> getListagem(){
         return new ArrayList<>();
     }
+
 }
