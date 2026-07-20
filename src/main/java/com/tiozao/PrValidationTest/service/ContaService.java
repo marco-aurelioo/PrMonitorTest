@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ContaService {
@@ -22,6 +23,15 @@ public class ContaService {
 
     public List<String> getListagem(){
         return itens;
+    }
+
+    public List<String> getListagemLike(String item){
+        if (item == null || item.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return itens.stream()
+                .filter(x -> x.contains(item))
+                .collect(Collectors.toList());
     }
 
 }
