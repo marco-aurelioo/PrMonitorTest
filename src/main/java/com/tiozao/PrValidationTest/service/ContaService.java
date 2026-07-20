@@ -15,12 +15,13 @@ public class ContaService {
         itens.add(item);
     }
 
-    public void deleteConta(){
+    public void deleteConta(String item){
         System.out.println("Deletando Conta");
+        itens.remove(item);
     }
 
     public List<String> getListagem(){
-        return new ArrayList<>();
+        return itens;
     }
 
 }
